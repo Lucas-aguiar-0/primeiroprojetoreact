@@ -9,8 +9,20 @@ import { Container } from 'react-bootstrap';
 
 function Paginas() {
   return (
-    <div>
+    <div
+    style={{ 
+      height: '100vh', 
+      width: '100vw' ,
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./imgfundo.jpeg")`, 
+      backgroundRepeat: 'no-repeat', 
+      backgroundSize: 'cover',
+     }}>
     <div className="App" 
+    style={{ 
+      height: '90vh', 
+      width: '100vw',
+      padding: '40px'
+    }}>
       <Cabecalho/>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <div style={{ flex: 0.3 }}>

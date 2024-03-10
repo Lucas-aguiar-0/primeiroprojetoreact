@@ -1,6 +1,6 @@
 function CadastroCliente() {
     return(
-        <h1>teste</h1>
+        <h1>Cadastro de Cliente</h1>
 
     );
 }

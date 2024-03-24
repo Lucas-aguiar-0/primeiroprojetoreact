@@ -7,6 +7,12 @@ export default function TabelaVeiculos(props){
       const novaLista = props.veiculos.filter(veiculo => veiculo.placa != placa);
       props.setVeiculos(novaLista);
     }
+
+    function alterarVeiculo(veiculo){
+      props.setVeiculoEscolhido(veiculo);
+      props.chamartelacadastro();
+      props.setModoEdicao(true);
+    }
     return (
         <div>
         <Button onClick = {props.chamartelacadastro} className='mb-2 mt-2'>Cadastrar</Button>
@@ -38,7 +44,11 @@ export default function TabelaVeiculos(props){
                 <td>{veiculo.anofabricacao}</td>
                 <td>{veiculo.tipocombustivel}</td>
                 <td>
-                  <Button variant='warning'><IconeEditar/></Button>{' '}</td><td>
+                  <Button variant='warning'
+                  onClick={()=> {alterarVeiculo(veiculo)}}
+                  ><IconeEditar/>
+                  
+                  </Button>{' '}</td><td>
                   <Button variant='danger'onClick={()=> {excluirVeiculos(veiculo.placa)}}><IconeExcluir 
                   /></Button>
                 </td>

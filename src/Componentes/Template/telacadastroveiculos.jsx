@@ -6,12 +6,19 @@ import listaVeiculos from "../../Dados/veiculos";
 export default function TelaCadastroVeiculo(props){
     const [exibeTabela,setExibeTabela] = useState(true);
     const [veiculos, setVeiculos] = useState(listaVeiculos);
+    const [veiculoEscolhido,setVeiculoEscolhido] =useState({});
+    const [modoEdicao,setModoEdicao] = useState(false);
+
 
     function alternarTelas(){
         setExibeTabela(!exibeTabela)
     }
 
     return(
-        exibeTabela ? <TabelaVeiculos veiculos={veiculos} setVeiculos={setVeiculos} chamartelacadastro={alternarTelas}/> : <CadastroVeiculo ChamarTabelaVeiculo={alternarTelas}/>
+        exibeTabela ? <TabelaVeiculos veiculos={veiculos} setVeiculos={setVeiculos} chamartelacadastro={alternarTelas} setVeiculoEscolhido ={setVeiculoEscolhido}
+        setModoEdicao={setModoEdicao}/> 
+        
+        : <CadastroVeiculo ChamarTabelaVeiculo={alternarTelas} veiculoEscolhido={veiculoEscolhido}
+        setModoEdicao={setModoEdicao} modoEdicao={modoEdicao}/>
     );
 }

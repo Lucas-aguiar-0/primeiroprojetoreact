@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
 function CadastroVeiculo(props) {
-  const [veiculo, setVeiculo] = useState({
+  
+  const [veiculo, setVeiculo] = useState(props.modoEdicao ? props.veiculoEscolhido:{
     codigo: 0,
     placa: "",
     modelo: "",

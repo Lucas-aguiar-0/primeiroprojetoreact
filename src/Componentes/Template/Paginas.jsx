@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import CadastroCliente from "./cadastrocliente";
-import CadastroProduto from "./cadastroveiculo";
+import TelaCadastroVeiculo from './telacadastroveiculos';
 import Navbar from "./navbar";
 import Cabecalho from "./cabecalhopagina";
 import Footer from "./rodape";
@@ -32,7 +32,7 @@ function Paginas() {
           <Container>
             <Routes>
               <Route path="/cadastrar-cliente" element={<CadastroCliente/>}/>
-              <Route path="/cadastrar-produto" element={<CadastroProduto/>}/>
+              <Route path="/cadastrar-produto" element={<TelaCadastroVeiculo/>}/>
             </Routes>
           </Container>
         </div>

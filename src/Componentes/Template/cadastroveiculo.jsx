@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
-function CadastroVeiculo() {
+function CadastroVeiculo(props) {
+  const [veiculo, setVeiculo] = useState({
+    codigo: 0,
+    placa: "",
+    modelo: "",
+    cor: "",
+    renavam: "",
+    chassi: "",
+    anofabricacao: 0,
+    tipocombustivel: ""
+});
+
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -108,8 +119,11 @@ function CadastroVeiculo() {
         </Col>
       </Row>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" className='mb-2 mt-2' type="submit">
         Cadastrar
+      </Button>
+      <Button variant="warning" onClick = {props.ChamarTabelaVeiculo} className='mb-2 mt-2' type="submit">
+        Voltar
       </Button>
     </Form>
   );
